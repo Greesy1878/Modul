@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Penjumlahan Bilangan</title>
+  <style>
+    .button-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .button-container button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Penjumlahan Bilangan</h1>
+
+<form id="additionForm">
+  <div style="display: flex; flex-direction: row;">
+    <div style="margin-right: 10px;">
+      Bilangan Pertama: <input type="text" id="num1">
+    </div>
+    <div>
+      Bilangan Kedua: <input type="text" id="num2">
+    </div>
+  </div><br>
+  <div class="button-container">
+    <button type="button" onclick="tambah()">Jumlahkan</button>
+    <button onclick="ulangi()">Ulangi</button>
+  </div>
+</form>
+
+<script>
+function tambah() {
+  var num1 = parseInt(document.getElementById("num1").value);
+  var num2 = parseInt(document.getElementById("num2").value);
+
+  if (!isNaN(num1) && !isNaN(num2)) {
+    var hasil = num1 + num2;
+    alert("Hasil Penjumlahan: " + hasil);
+  } else {
+    alert("Masukkan angka yang valid.");
+  }
+}
+
+function ulangi() {
+  document.getElementById("num1").value = "";
+  document.getElementById("num2").value = "";
+}
+</script>
+
+</body>
+</html>
